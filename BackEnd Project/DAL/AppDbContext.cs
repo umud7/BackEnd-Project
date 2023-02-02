@@ -10,5 +10,7 @@ namespace BackEnd_Project.DAL
           
         }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<NoticeBoard> NoticeBoards { get; set; }
+        public DbSet<Prof> Profs { get; set; }
     }
 }

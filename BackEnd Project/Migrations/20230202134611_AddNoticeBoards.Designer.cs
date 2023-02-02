@@ -4,14 +4,16 @@ using BackEnd_Project.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackEnd_Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230202134611_AddNoticeBoards")]
+    partial class AddNoticeBoards
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,24 +37,6 @@ namespace BackEnd_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("NoticeBoards");
-                });
-
-            modelBuilder.Entity("BackEnd_Project.Models.Prof", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ProfDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProfTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Profs");
                 });
 
             modelBuilder.Entity("BackEnd_Project.Models.Slider", b =>
