@@ -2,6 +2,7 @@
 using BackEnd_Project.Models;
 using BackEnd_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,6 +24,8 @@ namespace BackEnd_Project.Controllers
             homeVM.Sliders = _appDbContext.Sliders.ToList();
             homeVM.NoticeBoards = _appDbContext.NoticeBoards.ToList();
             homeVM.Profs = _appDbContext.Profs.ToList();
+            homeVM.Courses = _appDbContext.Courses.ToList();
+            homeVM.Events = _appDbContext.Events.ToList();
 
             return View(homeVM);
             

@@ -8,5 +8,7 @@ namespace BackEnd_Project.ViewModels
         public List<Slider> Sliders { get; set; }
         public List<NoticeBoard> NoticeBoards { get; set; }
         public List<Prof> Profs { get; set; }
+        public List<Course> Courses { get; set; }
+        public List<Event> Events { get; set; }
     }
 }
