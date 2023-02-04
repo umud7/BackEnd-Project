@@ -10,5 +10,6 @@ namespace BackEnd_Project.ViewModels
         public List<Prof> Profs { get; set; }
         public List<Course> Courses { get; set; }
         public List<Event> Events { get; set; }
+        public List<Banner> Banners { get; set; }
     }
 }

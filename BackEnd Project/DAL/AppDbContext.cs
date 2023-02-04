@@ -15,5 +15,6 @@ namespace BackEnd_Project.DAL
         public DbSet<Prof> Profs { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Banner> Banners { get; set; }
     }
 }

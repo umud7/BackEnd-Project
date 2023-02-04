@@ -26,6 +26,7 @@ namespace BackEnd_Project.Controllers
             homeVM.Profs = _appDbContext.Profs.ToList();
             homeVM.Courses = _appDbContext.Courses.ToList();
             homeVM.Events = _appDbContext.Events.ToList();
+            homeVM.Banners = _appDbContext.Banners.ToList();
 
             return View(homeVM);
             
