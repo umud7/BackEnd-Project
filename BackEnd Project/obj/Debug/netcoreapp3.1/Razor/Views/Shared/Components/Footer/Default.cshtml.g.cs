@@ -26,8 +26,15 @@ using BackEnd_Project.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\user\source\repos\BackEnd Project\BackEnd Project\Views\_ViewImports.cshtml"
+using BackendProject.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f5d222b3954163ddd750fea58c9b0d376dc9d483", @"/Views/Shared/Components/Footer/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"33dfff04c611ddabcfe1d1acee78a5bbbd6c4c4c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2cd2ac0c702c26b1c675610c69748c0d31c53a0a", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_Components_Footer_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Bio>
     #nullable disable
@@ -102,7 +109,7 @@ using BackEnd_Project.Models;
                 <div class=""col-md-4 col-sm-6 col-xs-12"">
                     <div class=");
             WriteLiteral("\"single-widget pr-60\">\r\n                        <div class=\"footer-logo pb-25\">\r\n                            <a href=\"index.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f5d222b3954163ddd750fea58c9b0d376dc9d4836742", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f5d222b3954163ddd750fea58c9b0d376dc9d4836945", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

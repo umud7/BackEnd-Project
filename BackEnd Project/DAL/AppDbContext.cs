@@ -19,5 +19,7 @@ namespace BackEnd_Project.DAL
         public DbSet<LatestBlog> LatestBlogs { get; set; }
         public DbSet<Bio> Bio { get; set; }
         public DbSet<Logo> Logos { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<SocialPage> SocialPages { get; set; }
     }
 }
