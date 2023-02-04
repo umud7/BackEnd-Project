@@ -27,7 +27,8 @@ namespace BackEnd_Project.Controllers
             homeVM.Courses = _appDbContext.Courses.ToList();
             homeVM.Events = _appDbContext.Events.ToList();
             homeVM.Banners = _appDbContext.Banners.ToList();
-
+            homeVM.LatestBlogs = _appDbContext.LatestBlogs.ToList();
+            homeVM.Logo = _appDbContext.Logos.FirstOrDefault();
             return View(homeVM);
             
         }

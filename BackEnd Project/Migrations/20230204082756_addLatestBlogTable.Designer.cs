@@ -4,14 +4,16 @@ using BackEnd_Project.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BackEnd_Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230204082756_addLatestBlogTable")]
+    partial class addLatestBlogTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,42 +43,6 @@ namespace BackEnd_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Banners");
-                });
-
-            modelBuilder.Entity("BackEnd_Project.Models.Bio", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Facebook")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FooterDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FooterLogo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HeaderContact")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HeaderLogo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pinterest")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Twitter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Vine")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bios");
                 });
 
             modelBuilder.Entity("BackEnd_Project.Models.Course", b =>
@@ -149,21 +115,6 @@ namespace BackEnd_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("LatestBlogs");
-                });
-
-            modelBuilder.Entity("BackEnd_Project.Models.Logo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Logos");
                 });
 
             modelBuilder.Entity("BackEnd_Project.Models.NoticeBoard", b =>
