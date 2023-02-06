@@ -17,10 +17,11 @@ namespace BackendProject.ViewComponents
             _appDbContext = appDbContext;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int take)
         {
             List<Teacher> teachers = _appDbContext.Teachers
                 .Include(t => t.SocialPage)
+                .Take (take)
                 .ToList();
 
             return View(await Task.FromResult(teachers));

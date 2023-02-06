@@ -113,6 +113,9 @@ namespace BackEnd_Project.Migrations
                     b.Property<string>("Duration")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 

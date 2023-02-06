@@ -9,5 +9,6 @@ namespace BackEnd_Project.Models
         public string Name { get; set; }
         public string Duration { get; set; }
         public string Location { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
