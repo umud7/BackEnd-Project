@@ -10,6 +10,14 @@
     <Compile Remove="Migrations\20230204133829_addTeachersTable.Designer.cs" />
     <Compile Remove="Migrations\20230204135205_addteacherlerTable.cs" />
     <Compile Remove="Migrations\20230204135205_addteacherlerTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207084148_addCourseDetailsTable.cs" />
+    <Compile Remove="Migrations\20230207084148_addCourseDetailsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207090553_addCourseDetailidTable.cs" />
+    <Compile Remove="Migrations\20230207090553_addCourseDetailidTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207090809_addCourseDetailssidTable.cs" />
+    <Compile Remove="Migrations\20230207090809_addCourseDetailssidTable.Designer.cs" />
+    <Compile Remove="Migrations\20230208071254_changeEventTable.cs" />
+    <Compile Remove="Migrations\20230208071254_changeEventTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

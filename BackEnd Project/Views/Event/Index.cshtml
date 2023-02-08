@@ -25,31 +25,33 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-event mb-60">
-                        <div class="event-img">
-                            <a href="event-details.html">
-                                <img src="~/img/event/@item.ImageUrl" alt="event">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
+                <a asp-action="detail" asp-route-id="@item.Id">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-event mb-60">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="~/img/event/@item.ImageUrl" alt="event">
+                                    <div class="course-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                                <div class="event-date">
+                                    <h3>20 <span>jun</span></h3>
                                 </div>
-                            </a>
-                            <div class="event-date">
-                                <h3>20 <span>jun</span></h3>
                             </div>
-                        </div>
-                        <div class="event-content text-left">
-                            <h4><a href="event-details.html">ADVANCE PHP WORKSHOP</a></h4>
-                            <ul>
-                                <li><span>time:</span> 9.00 AM - 4.45 PM</li>
-                                <li><span>venue</span> New Yourk City</li>
-                            </ul>
-                            <div class="event-content-right">
-                                <a class="default-btn" href="event-details.html">join now</a>
+                            <div class="event-content text-left">
+                                <h4><a asp-action="detail" asp-route-id="@item.Id">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><span>time:</span> 9.00 AM - 4.45 PM</li>
+                                    <li><span>venue</span> New Yourk City</li>
+                                </ul>
+                                <div class="event-content-right">
+                                    <a asp-action="detail" asp-route-id="@item.Name">join now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             }
         </div>
     </div>

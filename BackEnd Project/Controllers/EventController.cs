@@ -1,5 +1,6 @@
 ﻿using BackEnd_Project.DAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace BackEnd_Project.Controllers
@@ -17,6 +18,13 @@ namespace BackEnd_Project.Controllers
         {
             var events = _appDbContext.Events.ToList();
             return View(events);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var events = _appDbContext.EventDetails.Include(e=>e.Event).FirstOrDefault();
+            return View(events);
+
         }
     }
 }

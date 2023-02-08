@@ -134,3 +134,8 @@ C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Index.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Banner\Default.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LatestBlog\Default.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\LatestBlog\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Course\Detail.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Event\Detail.cshtml.g.cs
