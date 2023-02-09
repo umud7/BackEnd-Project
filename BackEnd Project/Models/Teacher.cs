@@ -8,7 +8,8 @@
         public string Position { get; set; }
         public int SocialPageId { get; set; }
         public SocialPage SocialPage { get; set; }
-        
+        public TeacherDetail TeacherDetail { get; set; }
+
 
     }
 }

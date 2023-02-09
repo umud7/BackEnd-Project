@@ -21,12 +21,12 @@ namespace BackEnd_Project.Controllers
             return View();
         }
 
-        public IActionResult Detail()
+        public IActionResult Detail(int id)
         {
             var course = _appDbContext.Courses
                 .Include(c => c.CourseTags).ThenInclude(c => c.Tag)
                 .Include(c => c.CourseDetail)
-               .FirstOrDefault();
+               .FirstOrDefault(x=>x.Id==id);
 
             return View(course);
         }
