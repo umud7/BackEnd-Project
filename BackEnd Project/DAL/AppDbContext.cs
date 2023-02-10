@@ -27,6 +27,8 @@ namespace BackEnd_Project.DAL
         public DbSet<TeacherDetail> TeacherDetails { get; set; }
         public DbSet<TeacherSkill> TeacherSkills { get; set; }
         public DbSet<BlogImage> BlogImages { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<CourseCategory> CourseCategories { get; set; }
 
 
         //Idsiz Fluent Api mentiqi Xanis gosterdiyi mentiq

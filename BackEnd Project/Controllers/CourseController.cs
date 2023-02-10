@@ -25,7 +25,8 @@ namespace BackEnd_Project.Controllers
         {
             var course = _appDbContext.Courses
                 .Include(c => c.CourseTags).ThenInclude(c => c.Tag)
-                .Include(c => c.CourseDetail)
+                .Include(c => c.CourseDetail).Include(cg=>cg.CourseCategory)
+                .ThenInclude(c=>c.Category)
                .FirstOrDefault(x=>x.Id==id);
 
             return View(course);

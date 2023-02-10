@@ -10,5 +10,6 @@ namespace BackEnd_Project.Models
         public string Desc { get; set; }
         public CourseDetail CourseDetail { get; set; }
         public CourseTag CourseTags { get; set; }
+        public List<CourseCategory> CourseCategory { get; set; }
     }
 }

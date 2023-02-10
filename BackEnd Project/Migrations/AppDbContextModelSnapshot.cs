@@ -99,6 +99,21 @@ namespace BackEnd_Project.Migrations
                     b.ToTable("BlogImages");
                 });
 
+            modelBuilder.Entity("BackEnd_Project.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("BackEnd_Project.Models.Course", b =>
                 {
                     b.Property<int>("Id")
@@ -118,6 +133,28 @@ namespace BackEnd_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("BackEnd_Project.Models.CourseCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("CourseCategories");
                 });
 
             modelBuilder.Entity("BackEnd_Project.Models.CourseDetail", b =>
@@ -539,6 +576,21 @@ namespace BackEnd_Project.Migrations
                     b.HasOne("BackEnd_Project.Models.LatestBlog", "LatestBlog")
                         .WithMany("BlogImages")
                         .HasForeignKey("LatestBlogId");
+                });
+
+            modelBuilder.Entity("BackEnd_Project.Models.CourseCategory", b =>
+                {
+                    b.HasOne("BackEnd_Project.Models.Category", "Category")
+                        .WithMany("CourseCategory")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEnd_Project.Models.Course", "Course")
+                        .WithMany("CourseCategory")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BackEnd_Project.Models.CourseDetail", b =>
