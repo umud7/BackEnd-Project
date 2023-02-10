@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEnd_Project.Models
 {

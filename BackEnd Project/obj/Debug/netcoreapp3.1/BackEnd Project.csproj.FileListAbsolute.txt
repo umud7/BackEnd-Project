@@ -145,3 +145,9 @@ C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewImports.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\_ViewStart.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Detail.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Create.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Shared\_Validation.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Update.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Delete.cshtml.g.cs
