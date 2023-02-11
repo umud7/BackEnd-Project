@@ -153,3 +153,4 @@ C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Delete.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Index.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Create.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Slider\Update.cshtml.g.cs

@@ -64,5 +64,75 @@ namespace BackEnd_Project.Areas.AdminArea.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Delete(int?id)
+        {
+            if (id == null) return NotFound();
+            Slider slider = _appDbContext.Sliders.Find(id);
+            if (slider == null) return NotFound();
+
+            string path = Path.Combine(_env.WebRootPath, "img/slider", slider.ImageUrl);
+            if (System.IO.File.Exists(path))
+            {
+
+                System.IO.File.Delete(path);
+            }
+
+            _appDbContext.Sliders.Remove(slider);
+            _appDbContext.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        public IActionResult Update(int? id)
+        {
+            if (id == null) return NotFound();
+            Slider slider = _appDbContext.Sliders.Find(id);
+            if (slider == null) return NotFound();
+
+            return View(slider);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Update(int? id,Slider slider)
+        {
+            if (id == null) return NotFound();
+            Slider existSlider = _appDbContext.Sliders.Find(id);
+            if (existSlider == null) return NotFound();
+
+            string filename = string.Empty;
+
+            if (slider.Photo!=null)
+            {
+                string path = Path.Combine(_env.WebRootPath, "img/slider", existSlider.ImageUrl);
+                if (System.IO.File.Exists(path))
+                {
+
+                    System.IO.File.Delete(path);
+                }
+
+                if (!slider.Photo.CheckImage())
+                {
+                    ModelState.AddModelError("Photo", "shekil Sech");
+                }
+                if (slider.Photo.CheckImageSize(1000))
+                {
+                    ModelState.AddModelError("Photo", "Olchu Boyuktu");
+                }
+
+                 filename= slider.Photo.SaveImage(_env, "img/slider");
+
+
+            }
+
+            existSlider.ImageUrl = filename??existSlider.ImageUrl;
+
+            _appDbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
