@@ -1,10 +1,11 @@
 ﻿using BackEnd_Project.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace BackEnd_Project.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -29,6 +30,7 @@ namespace BackEnd_Project.DAL
         public DbSet<BlogImage> BlogImages { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CourseCategory> CourseCategories { get; set; }
+        public DbSet<CourseImage> CourseImages { get; set; }
 
 
         //Idsiz Fluent Api mentiqi Xanis gosterdiyi mentiq

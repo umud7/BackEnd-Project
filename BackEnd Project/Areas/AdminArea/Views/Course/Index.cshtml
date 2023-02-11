@@ -1,0 +1,63 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Category Table</h4>
+                    <p class="card-description">
+                        <a asp-action="create" class="btn btn-outline-success">Create Course</a>
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Desc</th>
+                                    <th>Course Image</th>
+                                    <th>Category Name</th>
+                                    <th>Settings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Desc.Substring(0,10)...</td>
+                                        <td>
+                                            @foreach (var item1 in item.CourseCategory)
+                                            {
+                                                <img src="~/img/course/@item1.Course.CourseImages.FirstOrDefault(x=>x.IsMain).ImageUrl"/>
+                                            }
+                                        </td>
+                                        <td>
+                                            @foreach (var item1 in item.CourseCategory)
+                                            {
+                                                <p>
+                                                    @item1.Category.Name
+                                                    @item1.Course.CourseImages.FirstOrDefault(x=>x.IsMain).ImageUrl
+                                                </p>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-outline-primary"asp-action="detail" asp-route-id="@item.Id"><i class="mdi mdi-account-card-details"></i></a>
+                                            <a class="btn btn-outline-danger" asp-action="delete" asp-route-id="@item.Id"><i class="mdi mdi-delete"></i></a>
+                                            <a class="btn btn-outline-warning" asp-action="update" asp-route-id="@item.Id"><i class="mdi mdi-table-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
