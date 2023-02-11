@@ -1,4 +1,5 @@
 ﻿using BackEnd_Project.DAL;
+using BackEnd_Project.Helpers.Extension;
 using BackEnd_Project.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -41,26 +42,19 @@ namespace BackEnd_Project.Areas.AdminArea.Controllers
             {
                 return View();
             }
-            if(!slider.Photo.ContentType.Contains("image"))
+            if(!slider.Photo.CheckImage())
             {
                 ModelState.AddModelError("Photo", "shekil Sech");
             }
-            if(slider.Photo.Length/1024>100)
+            if(slider.Photo.CheckImageSize(1000))
             {
                 ModelState.AddModelError("Photo", "Olchu Boyuktu");
             }
 
+           
 
-            string fileName = Guid.NewGuid() + slider.Photo.FileName;
-            string path = Path.Combine(_env.WebRootPath, "img/slider",fileName);
-
-
-            using(FileStream stream = new FileStream(path, FileMode.Create))
-            {
-                slider.Photo.CopyTo(stream);
-            }
             Slider newSlider = new Slider();
-            newSlider.ImageUrl = fileName;
+            newSlider.ImageUrl = slider.Photo.SaveImage(_env, "img/slider");
             newSlider.Photo = slider.Photo;
             newSlider.Title = slider.Title;
             newSlider.SecondTitle = slider.SecondTitle;
