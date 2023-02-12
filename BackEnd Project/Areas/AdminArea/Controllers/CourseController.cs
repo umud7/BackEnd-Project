@@ -1,10 +1,12 @@
 ﻿using BackEnd_Project.DAL;
 using BackEnd_Project.Helpers.Extension;
 using BackEnd_Project.Models;
+using BackEnd_Project.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,16 +24,31 @@ namespace BackendProject.Areas.AdminArea.Controllers
             this.env = env;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1,int take=3)
         {
             var courses = _context.Courses
                 .Include(c => c.CourseDetail)
                 .Include(c => c.CourseImages)
                 .Include(c => c.CourseCategory)
                 .ThenInclude(c => c.Category)
+                .Skip((page-1)*take)
+                .Take(take)
                 .ToList();
+
+           var courseCount = courses.Count();
+
+           var items = courses.Skip((page-1)*take).Take(take).ToList();
+
+            PaginationVM<Course> pagination = new PaginationVM<Course>(page, CalculatePageCount(courseCount,take), items);
+
             return View(courses);
         }
+
+        private int CalculatePageCount(int count,int take)
+        {
+            return (int)Math.Ceiling((decimal)count / take);
+        }
+
         public IActionResult Create()
         {
 
@@ -75,12 +92,8 @@ namespace BackendProject.Areas.AdminArea.Controllers
 
             newCourse.Name = course.Name;
             newCourse.Desc = course.Desc;
-            newCourse.CourseDetail.Apply = course.CourseDetail.Apply;
-            newCourse.CourseDetail.Certification = course.CourseDetail.Certification;
-            newCourse.CourseDetail.About = course.CourseDetail.About;
             newCourse.Photos = course.Photos;
-            newCourse.CourseDetail.CourseId = courseDetail.CourseId;
-          
+           newCourse.CourseDetail = courseDetail;
 
 
 

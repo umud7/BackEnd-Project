@@ -1,9 +1,11 @@
 ﻿using BackEnd_Project.DAL;
 using BackEnd_Project.Helpers.Extension;
 using BackEnd_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Data;
 using System.IO;
 using System.Linq;
 
@@ -21,6 +23,8 @@ namespace BackEnd_Project.Areas.AdminArea.Controllers
             _env = env;
         }
 
+        [AllowAnonymous]
+
         public IActionResult Index()
         {
             var sliders = _appDbContext.Sliders.ToList();
@@ -28,7 +32,7 @@ namespace BackEnd_Project.Areas.AdminArea.Controllers
 
             return View(sliders);
         }
-
+        [Authorize]
         public IActionResult Create()
         {
             return View();

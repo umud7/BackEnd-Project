@@ -1,5 +1,7 @@
 using BackEnd_Project.DAL;
+using BackEnd_Project.Helpers;
 using BackEnd_Project.Models;
+using BackEnd_Project.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -46,7 +48,7 @@ namespace BackEnd_Project
                 options.Lockout.MaxFailedAccessAttempts = 3;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(20);
                 options.Lockout.AllowedForNewUsers = true;
-            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders().AddErrorDescriber<CustomIdentityErrors>();
         }
         
 
@@ -60,6 +62,8 @@ namespace BackEnd_Project
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

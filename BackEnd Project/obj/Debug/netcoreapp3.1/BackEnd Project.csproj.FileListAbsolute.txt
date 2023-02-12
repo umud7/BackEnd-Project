@@ -159,3 +159,12 @@ C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\User\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\Microsoft.Azure.Documents.ServiceInterop.dll
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\Cosmos.CRTCompat.dll
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\Microsoft.Azure.DocumentDB.Core.dll
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\Cosmos.CRTCompat.dll
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\Microsoft.Azure.Documents.ServiceInterop.dll
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Role\Index.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\User\Update.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Role\Create.cshtml.g.cs
