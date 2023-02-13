@@ -35,7 +35,7 @@ namespace BackEnd_Project.Areas.AdminArea.Controllers
             return View(users);
         }
 
-       public async Task<IActionResult>Update(string id)
+        public async Task<IActionResult>Update(string id)
         {
             AppUser user= await _userManager.FindByIdAsync(id);
             RoleVM roleVM = new RoleVM();

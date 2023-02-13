@@ -1,0 +1,24 @@
+﻿@model RoleVM
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Category Info</h4>
+                <p class="card-description">
+                   <a class="btn btn-outline-dark" asp-action="index">Back</a>
+                </p>
+                <p>
+                    @Model.FullName
+                </p>
+                <p>
+                   @Model.Roles
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>

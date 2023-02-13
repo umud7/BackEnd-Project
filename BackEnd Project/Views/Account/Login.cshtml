@@ -55,7 +55,7 @@
                                             Keep me signed in
                                         </label>
                                     </div>
-                                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                                    <a asp-action="ForgetPassword" class="auth-link text-black">Forgot password?</a>
                                 </div>
                                 <div class="mb-2">
                                     <button type="button" class="btn btn-block btn-facebook auth-form-btn">
@@ -63,7 +63,7 @@
                                     </button>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light">
-                                    Don't have an account? <a asp-action="register" class="text-primary">Create</a>
+                                    Don't have an account? <a asp-action="register" asp-controller="Account" class="text-primary">Create</a>
                                 </div>
                             </form>
                         </div>

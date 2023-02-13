@@ -125,5 +125,29 @@ namespace BackEnd_Project.Controllers
         //    return Content("role elave olundu");
         //}
 
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+
+        public async Task<IActionResult>ForgetPassword(ForgetPasswordVM forgetPasswordVM)
+        {
+            AppUser appUser = await _userManager.FindByEmailAsync(forgetPasswordVM.appUser.Email);
+            if(appUser == null)
+            {
+                ModelState.AddModelError("Error","Bele bir email yoxdur");
+                return View();
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
+            var link = Url.Action(nameof(ResetPassword), "Account", new { email = appUser.Email,token=token},Request.Scheme,Request.Host.ToString());
+            return View("Index","Home");
+        }
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
     }
 }

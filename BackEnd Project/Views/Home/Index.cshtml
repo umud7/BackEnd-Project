@@ -1,6 +1,10 @@
-﻿@model HomeVM
+﻿@using BackEnd_Project.Services.Interfaces
+@inject ISum _service
+@model HomeVM
 @{
+    ViewData["Title"] = "Index";
     Layout = null;
+    int result = _service.Sum(2, 3);
 }
 
 <!doctype html>
@@ -68,10 +72,10 @@
 
                                         </li>
                                         <li>
-                                            <a asp-action="index" asp-controller="blog">blog</a>
+                                            <a asp-action="index" asp-controller="latestblog">latestblog</a>
 
                                         </li>
-                                        <li><a asp-action="index" asp-controller="contact">Contact</a></li>
+                                        <li><a asp-action="index" asp-controller="contact">contact</a></li>
                                     </ul>
                                 </nav>
                             </div>

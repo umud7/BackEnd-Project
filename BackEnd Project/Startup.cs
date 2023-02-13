@@ -1,6 +1,8 @@
 using BackEnd_Project.DAL;
 using BackEnd_Project.Helpers;
 using BackEnd_Project.Models;
+using BackEnd_Project.Services;
+using BackEnd_Project.Services.Interfaces;
 using BackEnd_Project.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +37,13 @@ namespace BackEnd_Project
             services.AddDbContext<AppDbContext>(option =>
             {
                 option.UseSqlServer(_config["ConnectionStrings:DefaultConnection"]);
+            });
+            //services.AddSingleton<ISum, SumService>();
+            services.AddScoped<ISum, SumService>();
+            //services.AddTransient<ISum, SumService>();
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromSeconds(10);
             });
 
             services.AddIdentity<AppUser, IdentityRole>(options =>
