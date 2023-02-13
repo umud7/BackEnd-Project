@@ -4,6 +4,8 @@ using BackEnd_Project.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace BackEnd_Project.Controllers
@@ -142,12 +144,41 @@ namespace BackEnd_Project.Controllers
             }
             var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
             var link = Url.Action(nameof(ResetPassword), "Account", new { email = appUser.Email,token=token},Request.Scheme,Request.Host.ToString());
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("umudqurbanov100@gmail.com","CodeAcademy Umud");
+            mailMessage.To.Add(new MailAddress(appUser.Email));
+            mailMessage.Subject = "Reset Password";
+            mailMessage.Body = $"<a href={link}>Please Click Here</a>";
+            mailMessage.IsBodyHtml = true;
+
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Port = 587;
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new NetworkCredential("umudqurbanov100@gmail.com", "irmebasuekftrmjo");
+            smtpClient.Send(mailMessage);
+
             return View("Index","Home");
         }
         public IActionResult ResetPassword()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(string token, string email, ForgetPasswordVM forgetPasswordVM)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(email);
+            if (user == null) return NotFound();
+            if (!ModelState.IsValid) return View();
 
+            await _userManager.ResetPasswordAsync(user, token, forgetPasswordVM.Password);
+
+            return RedirectToAction("Index", "Home");
+        }
+        public IActionResult Index()
+        {
+
+            return View();
+        }
     }
 }

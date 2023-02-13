@@ -172,3 +172,5 @@ C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\_SearchPartial.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\_CoursePartial.cshtml.g.cs
 C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\user\source\repos\BackEnd Project\BackEnd Project\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
