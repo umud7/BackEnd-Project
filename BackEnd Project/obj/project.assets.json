@@ -9721,11 +9721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\BackEnd Project\\BackEnd Project\\BackEnd Project.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Backend-Project\\BackEnd Project\\BackEnd Project.csproj",
       "projectName": "BackEnd Project",
-      "projectPath": "C:\\Users\\user\\source\\repos\\BackEnd Project\\BackEnd Project\\BackEnd Project.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Backend-Project\\BackEnd Project\\BackEnd Project.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\BackEnd Project\\BackEnd Project\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Backend-Project\\BackEnd Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
